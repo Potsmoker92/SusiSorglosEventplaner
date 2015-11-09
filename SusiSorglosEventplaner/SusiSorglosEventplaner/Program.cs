@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SusiSorglosEventplaner
 {
     static class Program
@@ -14,6 +15,10 @@ namespace SusiSorglosEventplaner
         [STAThread]
         static void Main()
         {
+            // Tim Test datenbank zugriff
+            DataManagement manageD = new DataManagement();
+            List<User> users =  manageD.getAllusers();
+            // Tim ende
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

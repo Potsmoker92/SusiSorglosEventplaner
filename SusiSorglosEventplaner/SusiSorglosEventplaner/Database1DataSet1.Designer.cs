@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace susisorglos_Datenbank {
+namespace SusiSorglosEventplaner {
     
     
     /// <summary>
@@ -1073,7 +1073,7 @@ namespace susisorglos_Datenbank {
         }
     }
 }
-namespace susisorglos_Datenbank.Database1DataSetTableAdapters {
+namespace SusiSorglosEventplaner.Database1DataSetTableAdapters {
     
     
     /// <summary>

@@ -16,3 +16,5 @@ C:\Users\Tim\Documents\GitHubVisualStudio\SusiSorglosEventplaner\SusiSorglosEven
 C:\Users\Tim\Documents\GitHubVisualStudio\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.csproj.GenerateResource.Cache
 C:\Users\Tim\Documents\GitHubVisualStudio\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.exe
 C:\Users\Tim\Documents\GitHubVisualStudio\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.pdb
+C:\Users\Tim\Documents\GitHubVisualStudio\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\Database1.mdf
+C:\Users\Tim\Documents\GitHubVisualStudio\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\Database1_log.ldf

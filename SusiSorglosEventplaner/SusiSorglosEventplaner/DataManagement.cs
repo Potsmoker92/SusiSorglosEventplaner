@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace susisorglos_Datenbank
+namespace SusiSorglosEventplaner
+
 {
     class DataManagement : IDataManagement
     {
         private static bool isConnectionCreated = false;
-        private static string strConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='c:\\users\\tim\\documents\\visual studio 2015\\Projects\\susisorglos_Datenbank\\susisorglos_Datenbank\\Database1.mdf';Integrated Security=True";
+        private static string strConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True";
         private static SqlConnection conn = new SqlConnection(strConnection);
         public string strQuery = "";
 

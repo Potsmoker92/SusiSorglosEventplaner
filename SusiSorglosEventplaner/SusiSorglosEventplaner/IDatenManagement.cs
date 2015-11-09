@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace susisorglos_Datenbank
+namespace SusiSorglosEventplaner
 {
     interface IDataManagement
     {
