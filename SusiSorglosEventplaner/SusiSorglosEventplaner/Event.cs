@@ -10,5 +10,8 @@ namespace SusiSorglosEventplaner
     {
         public int eventID { get; set; }
         public string strEventname { get; set; }
+        public string strEventLocation { get; set; }
+        public DateTime dateEventStart { get; set; }
+        public DateTime dateEventEnd { get; set; }
     }
 }

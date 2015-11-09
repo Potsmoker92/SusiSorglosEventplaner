@@ -9,8 +9,7 @@ namespace SusiSorglosEventplaner
 
 {
     class DataManagement : IDataManagement
-    {
-        private static bool isConnectionCreated = false;
+    {        
         private static string strConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True";
         private static SqlConnection conn = new SqlConnection(strConnection);
         public string strQuery = "";
@@ -34,7 +33,30 @@ namespace SusiSorglosEventplaner
 
         public List<Event> getAllEvents()
         {
-            throw new NotImplementedException();
+            List<Event> lstEvents = new List<Event>();
+            strQuery = "SELECT * FROM T_events";
+            conn.Open();
+
+            using (SqlCommand cmd = new SqlCommand(strQuery, conn))
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Event theEvent = new Event
+                        {
+                            eventID = (int)reader["userID"],
+                            strEventname = (string)reader["eventName"],
+                            strEventLocation = (string)reader["eventLocation"],
+                            dateEventStart = (DateTime)reader["eventStart"],
+                            dateEventEnd = (DateTime)reader["eventEnd"]                            
+                        };
+                        lstEvents.Add(theEvent);
+                    }
+                }
+            }
+            conn.Close();
+            return lstEvents;
         }
 
         public List<User> getAllusers()
@@ -70,7 +92,28 @@ namespace SusiSorglosEventplaner
 
         public User getUser(int userID)
         {
-            throw new NotImplementedException();
+            User theUser = new User();
+            strQuery = "SELECT * FROM T_User WHERE id ='" + userID +"' LIMIT 1";
+            conn.Open();
+
+            using (SqlCommand cmd = new SqlCommand(strQuery, conn))
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        User tempUser = new User
+                        {
+                            userID = (int)reader["userID"],
+                            strVorname = (string)reader["vorname"],
+                            strNachname = (string)reader["nachname"]
+                        };
+                        theUser = tempUser;
+                    }
+                }
+            }
+            conn.Close();
+            return theUser;
         }
 
         public List<User> getUsersByEvent(int eventID)

@@ -18,6 +18,7 @@ namespace SusiSorglosEventplaner
             // Tim Test datenbank zugriff
             DataManagement manageD = new DataManagement();
             List<User> users =  manageD.getAllusers();
+            List<Event> events = manageD.getAllEvents();
             // Tim ende
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
