@@ -48,5 +48,12 @@ namespace SusiSorglosEventplaner
             dataGridViewEvent.DataSource = fachkonzept.getAllEvents();
             dataGridViewEvent.Refresh();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fachkonzept.insertUser(new User() { strVorname = textBox1.Text,
+                                                strNachname = textBox2.Text
+                                                });
+        }
     }
 }
