@@ -13,8 +13,8 @@ namespace SusiSorglosEventplaner
         [STAThread]
         public static void Main(string[] args)
         {
-           // GUI gui = new GUI();
-             TUI tui = new TUI();
+            GUI gui = new GUI();
+            // TUI tui = new TUI();
         }
     }
 }

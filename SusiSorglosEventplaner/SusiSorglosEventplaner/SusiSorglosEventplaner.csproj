@@ -70,24 +70,18 @@
     <Compile Include="Fachkonzept\FachkonzeptSortiert.cs" />
     <Compile Include="Fachkonzept\FachkonzeptUnsortiert.cs" />
     <Compile Include="Fachkonzept\iFachkonzept.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Database\IDatenManagement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Database\User.cs" />
-    <Compile Include="UserInterface\Action.cs" />
-    <Compile Include="UserInterface\GUI.cs" />
-    <Compile Include="UserInterface\GUI.Designer.cs" />
+    <Compile Include="UserInterface\GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\GUI.Designer.cs">
+      <DependentUpon>GUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface\MenuHandler.cs" />
     <Compile Include="UserInterface\TUI.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -98,7 +92,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserInterface\GUI.resx" />
+    <EmbeddedResource Include="UserInterface\GUI.resx">
+      <DependentUpon>GUI.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Database\Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </None>

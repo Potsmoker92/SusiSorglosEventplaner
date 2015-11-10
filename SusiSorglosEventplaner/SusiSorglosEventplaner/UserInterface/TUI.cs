@@ -19,7 +19,9 @@ namespace SusiSorglosEventplaner
          */
         private string[] actionOption = {"Was möchten Sie machen?\n", "anzeigen", "hinzufügen", "löschen", "bearbeiten" ,"verlassen" };
         private string[] typeOption = { "Was möchten Sie ", "Benutzer", "Events", "Verlasen" };
-     
+
+        private iFachkonzept fachkonzept;
+
         #region Import lib32
         [DllImport("Kernel32")]
         public static extern void AllocConsole();
@@ -38,6 +40,9 @@ namespace SusiSorglosEventplaner
                 AllocConsole();
             }
 
+            fachkonzept = new FachkonzeptSortiert(new DataManagement());
+            //fachkonzept = new FachkonzeptUnsortiert(new DataManagement());
+
             ShowOption();
            
             FreeConsole();
@@ -48,7 +53,6 @@ namespace SusiSorglosEventplaner
             string[] options = actionOption;
             int selectedAction = 1;
             int selectedType = 1;
-            Action action = new Action();
 
             MenuHandler  actionMenu = new MenuHandler(actionOption);
             MenuHandler typeMenu = new MenuHandler(typeOption);
@@ -82,11 +86,11 @@ namespace SusiSorglosEventplaner
             {
                 if (selectedType == 1)
                 {
-                    action.ListUser();
+                   fachkonzept.getAllusers();
                 }
                 if (selectedType == 2)
                 {
-                    action.ListEvent();
+                    fachkonzept.getAllEvents();
                 }
             }
 
@@ -94,11 +98,14 @@ namespace SusiSorglosEventplaner
             {
                 if (selectedType == 1)
                 {
-                    action.AddUser();
+
+                    User newUser = requetsUser();
+                    fachkonzept.insertUser(newUser);
                 }
                 if (selectedType == 2)
                 {
-                    action.AddEvent();
+                    Event newEvent = requetsEvent();
+                    fachkonzept.insertEvent(newEvent);
                 }
             }
 
@@ -106,11 +113,13 @@ namespace SusiSorglosEventplaner
             {
                 if (selectedType == 1)
                 {
-                    action.DeleteUser();
+                    int deletID = requestUserID();
+                    fachkonzept.deleteUser(deletID);
                 }
                 if (selectedType == 2)
                 {
-                    action.DeleteEvent();
+                    Event deleteEvent = requestdeleteEvent();
+                    fachkonzept.deleteEvent(deleteEvent);
                 }
             }
 
@@ -118,18 +127,72 @@ namespace SusiSorglosEventplaner
             {
                 if (selectedType == 1)
                 {
-                    action.ChangeUser();
+                    User changedUser = requestChangedUser();
+                    fachkonzept.updateUser(changedUser);
                 }
                 if (selectedType == 2)
                 {
-                    action.ChangeEvent();
+                    // was not implemented by tim / tino
                 }
             }
 
             ShowOption();
             
         }
-    
+
+        private User requetsUser()
+        {
+            User result = new User();
+            do
+            {
+                Console.Clear();
+                Console.Write("Geben Sie den Vornamen ein: ");
+                result.strVorname = Console.ReadLine();
+            } while (result.strVorname == "");
+
+            do
+            {
+                Console.Clear();
+                Console.Write("Geben Sie den Nachnamen ein:");
+                result.strNachname = Console.ReadLine();
+            } while (result.strNachname == "");
+
+            return result;
+        }
+
+        private Event requetsEvent()
+        {
+            Event result = new Event();
+            do
+            {
+                Console.Clear();
+                Console.Write("Geben Sie den Namen des Events ein: ");
+                result.strEventname= Console.ReadLine();
+            } while (result.strEventname == "");
+
+            do
+            {
+                Console.Clear();
+                Console.Write("Geben Sie den Ort ein:");
+                result.strEventLocation = Console.ReadLine();
+            } while (result.strEventLocation == "");
+
+            return result;
+        }
+
+        private int requestUserID()
+        {
+            return -1;
+        }
+        private Event requestdeleteEvent()
+        {
+            return new Event();
+        }
+
+        private User requestChangedUser()
+        {
+            return new User();
+        }
      public static bool AttachToConsole()
         {
             const uint ParentProcess = 0xFFFFFFFF;

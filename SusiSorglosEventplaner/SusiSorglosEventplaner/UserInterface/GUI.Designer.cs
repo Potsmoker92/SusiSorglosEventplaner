@@ -29,77 +29,76 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPagePerson = new System.Windows.Forms.TabPage();
-            this.tabPageEvent = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridViewPerson = new System.Windows.Forms.DataGridView();
             this.dataGridViewEvent = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
-            this.tabPagePerson.SuspendLayout();
-            this.tabPageEvent.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvent)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPagePerson);
-            this.tabControl1.Controls.Add(this.tabPageEvent);
-            this.tabControl1.Location = new System.Drawing.Point(-1, 3);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(837, 350);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(884, 618);
+            this.tabControl1.TabIndex = 1;
             // 
-            // tabPagePerson
+            // tabPage1
             // 
-            this.tabPagePerson.Controls.Add(this.dataGridViewPerson);
-            this.tabPagePerson.Location = new System.Drawing.Point(4, 22);
-            this.tabPagePerson.Name = "tabPagePerson";
-            this.tabPagePerson.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePerson.Size = new System.Drawing.Size(829, 324);
-            this.tabPagePerson.TabIndex = 1;
-            this.tabPagePerson.Text = "Person";
-            this.tabPagePerson.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.dataGridViewPerson);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(876, 592);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPageEvent
+            // tabPage2
             // 
-            this.tabPageEvent.Controls.Add(this.dataGridViewEvent);
-            this.tabPageEvent.Location = new System.Drawing.Point(4, 22);
-            this.tabPageEvent.Name = "tabPageEvent";
-            this.tabPageEvent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEvent.Size = new System.Drawing.Size(829, 324);
-            this.tabPageEvent.TabIndex = 2;
-            this.tabPageEvent.Text = "Event";
-            this.tabPageEvent.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.dataGridViewEvent);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(876, 592);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dataGridViewPerson
             // 
             this.dataGridViewPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPerson.Location = new System.Drawing.Point(9, 6);
+            this.dataGridViewPerson.Location = new System.Drawing.Point(6, 6);
             this.dataGridViewPerson.Name = "dataGridViewPerson";
-            this.dataGridViewPerson.Size = new System.Drawing.Size(813, 312);
-            this.dataGridViewPerson.TabIndex = 0;
+            this.dataGridViewPerson.Size = new System.Drawing.Size(864, 580);
+            this.dataGridViewPerson.TabIndex = 1;
             // 
             // dataGridViewEvent
             // 
             this.dataGridViewEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEvent.Location = new System.Drawing.Point(9, 7);
+            this.dataGridViewEvent.Location = new System.Drawing.Point(6, 6);
             this.dataGridViewEvent.Name = "dataGridViewEvent";
-            this.dataGridViewEvent.Size = new System.Drawing.Size(813, 311);
-            this.dataGridViewEvent.TabIndex = 0;
+            this.dataGridViewEvent.Size = new System.Drawing.Size(864, 580);
+            this.dataGridViewEvent.TabIndex = 2;
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(837, 357);
+            this.ClientSize = new System.Drawing.Size(908, 642);
             this.Controls.Add(this.tabControl1);
             this.Name = "GUI";
-            this.Text = "SUPER EVENT PLANING";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
-            this.tabPagePerson.ResumeLayout(false);
-            this.tabPageEvent.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPerson)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvent)).EndInit();
             this.ResumeLayout(false);
@@ -109,10 +108,9 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPagePerson;
-        private System.Windows.Forms.TabPage tabPageEvent;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridViewPerson;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridViewEvent;
     }
 }
-

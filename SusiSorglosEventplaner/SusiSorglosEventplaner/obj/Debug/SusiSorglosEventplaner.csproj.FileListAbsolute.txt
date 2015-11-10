@@ -23,10 +23,9 @@ C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSor
 C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.pdb
 C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\SusiSorglosEventplaner.exe
 C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\SusiSorglosEventplaner.pdb
-C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.Form1.resources
 C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.Properties.Resources.resources
 C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.csproj.GenerateResource.Cache
 C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\Database\Database1.mdf
 C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\Database\Database1_log.ldf
 C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.csprojResolveAssemblyReference.cache
-C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.UserInterface.GUI.resources
+C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.GUI.resources

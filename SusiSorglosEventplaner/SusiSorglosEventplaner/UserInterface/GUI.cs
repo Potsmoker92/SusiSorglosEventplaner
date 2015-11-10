@@ -12,19 +12,21 @@ namespace SusiSorglosEventplaner
 {
     public partial class GUI : Form
     {
+        private iFachkonzept fachkonzept;
+
         public GUI()
         {
+
+            fachkonzept = new FachkonzeptSortiert(new DataManagement());
+            //fachkonzept = new FachkonzeptUnsortiert(new DataManagement());
+
             Application.EnableVisualStyles();
             InitializeComponent();
-            
+            SetGridUserRights();
+            FillGrid();
             Application.Run(this);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            SetGridUserRights();
-            FillGrid();
-        }
 
         private void SetGridUserRights()
         {
@@ -39,11 +41,11 @@ namespace SusiSorglosEventplaner
 
         private void FillGrid()
         {
-            Action action = new Action();
-            dataGridViewPerson.DataSource = action.ListUser();
+
+            dataGridViewPerson.DataSource = fachkonzept.getAllusers();
             dataGridViewPerson.Refresh();
 
-            dataGridViewEvent.DataSource = action.ListEvent();
+            dataGridViewEvent.DataSource = fachkonzept.getAllEvents();
             dataGridViewEvent.Refresh();
         }
     }
