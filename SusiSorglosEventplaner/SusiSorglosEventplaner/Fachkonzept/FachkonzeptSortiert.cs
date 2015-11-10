@@ -3,16 +3,17 @@ using System.Collections.Generic;
 
 namespace SusiSorglosEventplaner {
 
-    public class FachkonzeptSortiert : iFachkonzept, IDataManagement
+    public class FachkonzeptSortiert : iFachkonzept
     {
 
         public DataManagement Datenhaltung;
 
-        public FachkonzeptSortiert(DataManagement datenhaltung) { Datenhaltung = datenhaltung; }
+        public FachkonzeptSortiert(DataManagement datenhaltung) 
+        { this.Datenhaltung = datenhaltung; }
 
         public List<User> getAllusers()
         {
-            List<User> tmp = this.Datenhaltung.getAllusers();
+            List<User> tmp = Datenhaltung.getAllusers();
             tmp.Sort((x, y) => x.userID.CompareTo(y.userID));
             return tmp;
         }

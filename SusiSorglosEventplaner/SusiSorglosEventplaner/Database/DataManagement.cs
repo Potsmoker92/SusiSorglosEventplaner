@@ -13,7 +13,6 @@ namespace SusiSorglosEventplaner
         private static string strConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True";
         private static SqlConnection conn = new SqlConnection(strConnection);
         public string strQuery = "";
-
         public void addUserToEvent(int userID, int eventID)
         {
             conn.Open();

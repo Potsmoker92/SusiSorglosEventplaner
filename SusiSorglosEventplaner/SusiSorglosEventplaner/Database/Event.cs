@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SusiSorglosEventplaner
 {
-    class Event
+    public class Event
     {
         public int eventID { get; set; }
         public string strEventname { get; set; }

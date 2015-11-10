@@ -6,11 +6,14 @@ namespace SusiSorglosEventplaner
 
     public class FachkonzeptUnsortiert : iFachkonzept {
 
-        public DataManagement Datenhaltung { get; set; }
+        public DataManagement Datenhaltung;
 
         public FachkonzeptUnsortiert(DataManagement datenhaltung) { Datenhaltung = datenhaltung; }
 
-        public List<User> getAllusers() { return this.Datenhaltung.getAllusers(); }
+        public List<User> getAllusers() 
+        {
+            return  Datenhaltung.getAllusers();
+        }
 
 
         public List<Event> getAllEvents() { return this.Datenhaltung.getAllEvents(); }
