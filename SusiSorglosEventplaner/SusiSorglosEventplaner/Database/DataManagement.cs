@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 namespace SusiSorglosEventplaner
 
 {
-    class DataManagement : IDataManagement
+    public class DataManagement : IDataManagement
     {        
         private static string strConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True";
         private static SqlConnection conn = new SqlConnection(strConnection);

@@ -69,7 +69,7 @@
     <Compile Include="Database\Event.cs" />
     <Compile Include="Fachkonzept\FachkonzeptSortiert.cs" />
     <Compile Include="Fachkonzept\FachkonzeptUnsortiert.cs" />
-    <Compile Include="Fachkonzept\iDatenhaltung.cs" />
+    <Compile Include="Fachkonzept\iFachkonzept.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
