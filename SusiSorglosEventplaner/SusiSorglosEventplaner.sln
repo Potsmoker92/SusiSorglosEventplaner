@@ -1,24 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SusiSorglosEventplaner", "SusiSorglosEventplaner\SusiSorglosEventplaner.csproj", "{4621FD5F-C73E-4C8E-AD51-0D32ABB4AB1B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DD4D0318-A18A-41AD-BA0C-3733115CF6BF}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\App.config = ..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\App.config
-		..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Database1.mdf = ..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Database1.mdf
-		..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Database1_log.ldf = ..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Database1_log.ldf
-		..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Database1DataSet.Designer.cs = ..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Database1DataSet.Designer.cs
-		..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Database1DataSet.xsc = ..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Database1DataSet.xsc
-		..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Database1DataSet.xsd = ..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Database1DataSet.xsd
-		..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Database1DataSet.xss = ..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Database1DataSet.xss
-		..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\DataManagement.cs = ..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\DataManagement.cs
-		..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Event.cs = ..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\Event.cs
-		..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\IDatenManagement.cs = ..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\IDatenManagement.cs
-		..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\User.cs = ..\..\..\Visual Studio 2015\Projects\susisorglos_Datenbank\susisorglos_Datenbank\User.cs
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
