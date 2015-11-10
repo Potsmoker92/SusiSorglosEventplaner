@@ -33,6 +33,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridViewPerson = new System.Windows.Forms.DataGridView();
             this.dataGridViewEvent = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -52,6 +53,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.dataGridViewPerson);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -74,10 +76,12 @@
             // 
             // dataGridViewPerson
             // 
+            this.dataGridViewPerson.AllowDrop = true;
+            this.dataGridViewPerson.AllowUserToOrderColumns = true;
             this.dataGridViewPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPerson.Location = new System.Drawing.Point(6, 6);
             this.dataGridViewPerson.Name = "dataGridViewPerson";
-            this.dataGridViewPerson.Size = new System.Drawing.Size(864, 580);
+            this.dataGridViewPerson.Size = new System.Drawing.Size(452, 580);
             this.dataGridViewPerson.TabIndex = 1;
             // 
             // dataGridViewEvent
@@ -87,6 +91,15 @@
             this.dataGridViewEvent.Name = "dataGridViewEvent";
             this.dataGridViewEvent.Size = new System.Drawing.Size(864, 580);
             this.dataGridViewEvent.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(464, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 266);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
             // GUI
             // 
@@ -112,5 +125,6 @@
         private System.Windows.Forms.DataGridView dataGridViewPerson;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridViewEvent;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

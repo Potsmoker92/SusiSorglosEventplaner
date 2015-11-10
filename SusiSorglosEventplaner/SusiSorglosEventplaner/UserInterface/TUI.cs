@@ -86,11 +86,21 @@ namespace SusiSorglosEventplaner
             {
                 if (selectedType == 1)
                 {
-                   fachkonzept.getAllusers();
+                  foreach(User usr in  fachkonzept.getAllusers())
+                  {
+                      Console.WriteLine("ID {0,4} Vorname {1,10} , Nachname {2,10}", usr.userID, usr.strVorname, usr.strNachname);
+                  }
+                  Console.WriteLine("Drücken Sie irgend eine Taste um zum Anfangsmenu zurrückzukehren.");
+                  Console.ReadKey();
                 }
                 if (selectedType == 2)
                 {
-                    fachkonzept.getAllEvents();
+                    foreach (Event ent in fachkonzept.getAllEvents())
+                    {
+                        Console.WriteLine("ID {0,4} Name {1,10} , Ort {2,10}", ent.eventID, ent.strEventname,ent.strEventLocation);
+                    }
+                    Console.WriteLine("Drücken Sie irgend eine Taste um zum Anfangsmenu zurrückzukehren.");
+                    Console.ReadKey();
                 }
             }
 
