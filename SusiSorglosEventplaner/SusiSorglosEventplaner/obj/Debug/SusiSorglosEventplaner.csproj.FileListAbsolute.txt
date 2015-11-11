@@ -29,3 +29,25 @@ C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSor
 C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\Database\Database1_log.ldf
 C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.csprojResolveAssemblyReference.cache
 C:\Users\Wartari\Documents\SusiSorglosEventplaner\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.GUI.resources
+E:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\SusiSorglosEventplaner.exe.config
+E:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.exe
+E:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.pdb
+E:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\Database\Database1.mdf
+E:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\Database\Database1_log.ldf
+E:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\SusiSorglosEventplaner.exe
+E:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\SusiSorglosEventplaner.pdb
+E:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.csprojResolveAssemblyReference.cache
+E:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.Properties.Resources.resources
+E:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.GUI.resources
+E:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.csproj.GenerateResource.Cache
+G:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\SusiSorglosEventplaner.exe.config
+G:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.exe
+G:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.pdb
+G:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\Database\Database1.mdf
+G:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\Database\Database1_log.ldf
+G:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\SusiSorglosEventplaner.exe
+G:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\bin\Debug\SusiSorglosEventplaner.pdb
+G:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.csprojResolveAssemblyReference.cache
+G:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.Properties.Resources.resources
+G:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.GUI.resources
+G:\Susi Sorglos\SusiSorglosEventplaner\SusiSorglosEventplaner\obj\Debug\SusiSorglosEventplaner.csproj.GenerateResource.Cache
