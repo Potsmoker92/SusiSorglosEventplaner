@@ -34,7 +34,7 @@ namespace SusiSorglosEventplaner
 
         public void updateEvent(Event theEvent)
         {
-            strQuery = "Update T_events SET eventname = '"+theEvent.strEventname+"',eventLocation = '"+theEvent.strEventLocation+"',eventStart = '"+theEvent.dateEventStart+"',eventEnd = '"+theEvent.dateEventEnd+"' WHERE eventID = "+theEvent.eventID+";";
+            strQuery = "UPDATE T_events SET eventname = '"+theEvent.strEventname+"',eventLocation = '"+theEvent.strEventLocation+"',eventStart = '"+theEvent.dateEventStart+"',eventEnd = '"+theEvent.dateEventEnd+"' WHERE eventID = "+theEvent.eventID+";";
             conn.Open();
             SqlCommand cmd = new SqlCommand(strQuery, conn);
             cmd.ExecuteNonQuery();
@@ -107,7 +107,7 @@ namespace SusiSorglosEventplaner
         public List<Event> getEventsByUser(int userID)
         {
             List<Event> lstEvents = new List<Event>();
-            strQuery = "SELECT * FROM T_events WHERE eventID = (SELECT f_p_eventID FROM T_teilnahmen WHERE f_p_userID = "+userID+");";
+            strQuery = "SELECT * FROM T_events WHERE eventID IN (SELECT f_p_eventID FROM T_teilnahmen WHERE f_p_userID = "+userID+");";
             conn.Open();
 
             using (SqlCommand cmd = new SqlCommand(strQuery, conn))
@@ -135,7 +135,7 @@ namespace SusiSorglosEventplaner
         public User getUser(int userID)
         {
             User theUser = new User();
-            strQuery = "SELECT * FROM T_User WHERE id ='" + userID + "' LIMIT 1;";
+            strQuery = "SELECT * FROM T_User WHERE userID =" + userID + " LIMIT 1;";
             conn.Open();
 
             using (SqlCommand cmd = new SqlCommand(strQuery, conn))
@@ -161,7 +161,7 @@ namespace SusiSorglosEventplaner
         public List<User> getUsersByEvent(int eventID)
         {
             List<User> lstUser = new List<User>();
-            strQuery = "SELECT * FROM T_user WHERE userID = (SELECT f_p_userID FROM T_teilnahmen WHERE f_p_eventID = "+eventID+");";
+            strQuery = "SELECT * FROM T_user WHERE userID IN (SELECT f_p_userID FROM T_teilnahmen WHERE f_p_eventID = "+eventID+");";
             conn.Open();
 
             using (SqlCommand cmd = new SqlCommand(strQuery, conn))
