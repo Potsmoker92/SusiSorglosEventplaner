@@ -26,8 +26,7 @@ namespace SusiSorglosEventplaner
             FillGrid();
             Application.Run(this);
         }
-
-
+    
         private void SetGridUserRights()
         {
             dataGridViewPerson.AllowUserToAddRows = true;
@@ -69,6 +68,49 @@ namespace SusiSorglosEventplaner
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            User usr = new User();
+            int userID = 0;
+            Int32.TryParse(textBox5.Text, out  userID);
+            usr.userID = userID;
+
+            usr.strVorname = textBox4.Text;
+            usr.strNachname = textBox3.Text;
+
+            fachkonzept.updateUser(usr);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int userID = -1;
+            Int32.TryParse(textBox6.Text, out userID);
+            fachkonzept.deleteUser(userID);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Event evnt = new Event();
+
+            evnt.strEventname = textBox12.Text;
+            evnt.strEventLocation = textBox11.Text;
+
+            evnt.dateEventStart = dateTimePicker1.Value;
+            evnt.dateEventEnd = dateTimePicker2.Value;
+
+            fachkonzept.insertEvent(evnt);
         }
     }
 }
