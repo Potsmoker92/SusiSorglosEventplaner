@@ -112,5 +112,33 @@ namespace SusiSorglosEventplaner
 
             fachkonzept.insertEvent(evnt);
         }
+
+    
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int id = -1;
+            Int32.TryParse(textBox7.Text, out id);
+            fachkonzept.deleteEvent(new Event() { eventID = id });
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Event evnt = new Event();
+            int id = -1;
+            Int32.TryParse(textBox10.Text, out id);
+            evnt.eventID = id;
+            evnt.strEventname = textBox9.Text;
+            evnt.strEventLocation = textBox8.Text;
+            evnt.dateEventStart = dateTimePicker4.Value;
+            evnt.dateEventEnd = dateTimePicker3.Value;
+
+            fachkonzept.insertEvent(evnt);
+        }
     }
 }
