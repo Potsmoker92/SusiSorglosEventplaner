@@ -8,26 +8,37 @@ using System.Data.SqlClient;
 namespace SusiSorglosEventplaner
 
 {
-    public class DataManagement : IDataManagement
-    {        
+    class DataManagement : IDataManagement
+    {
         private static string strConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True";
         private static SqlConnection conn = new SqlConnection(strConnection);
         public string strQuery = "";
+
         public void addUserToEvent(int userID, int eventID)
         {
+            strQuery = "INSERT INTO T_teilnahmen (f_p_userID, f_p_eventID) VALUES ('" + userID + "','" + eventID + "')";
             conn.Open();
+            SqlCommand cmd = new SqlCommand(strQuery, conn);
+            cmd.ExecuteNonQuery();
             conn.Close();
-            throw new NotImplementedException();
         }
 
         public void deleteEvent(int eventID)
         {
-            throw new NotImplementedException();
+            strQuery = "DELETE FROM T_events WHERE eventID =" + eventID;
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(strQuery, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         public void delteUser(int userID)
         {
-            throw new NotImplementedException();
+            strQuery = "DELETE FROM T_user WHERE userID = " + userID;
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(strQuery, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         public List<Event> getAllEvents()
@@ -48,7 +59,7 @@ namespace SusiSorglosEventplaner
                             strEventname = (string)reader["eventName"],
                             strEventLocation = (string)reader["eventLocation"],
                             dateEventStart = (DateTime)reader["eventStart"],
-                            dateEventEnd = (DateTime)reader["eventEnd"]                            
+                            dateEventEnd = (DateTime)reader["eventEnd"]
                         };
                         lstEvents.Add(theEvent);
                     }
@@ -92,7 +103,7 @@ namespace SusiSorglosEventplaner
         public User getUser(int userID)
         {
             User theUser = new User();
-            strQuery = "SELECT * FROM T_User WHERE id ='" + userID +"' LIMIT 1";
+            strQuery = "SELECT * FROM T_User WHERE id ='" + userID + "' LIMIT 1";
             conn.Open();
 
             using (SqlCommand cmd = new SqlCommand(strQuery, conn))
@@ -122,17 +133,29 @@ namespace SusiSorglosEventplaner
 
         public void insertEvent(Event theEvent)
         {
-            throw new NotImplementedException();
+            strQuery = "INSERT INTO T_events (eventname,eventLocation,eventStart,eventEnd) VALUES ('" + theEvent.strEventname + "','" + theEvent.strEventLocation + "','" + theEvent.dateEventStart + "','" + theEvent.dateEventEnd + "')";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(strQuery, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close(); ;
         }
 
         public void insertUser(User theUser)
         {
-            throw new NotImplementedException();
+            strQuery = "INSERT INTO T_user (vorname,nachname) VALUE ('" + theUser.strVorname + "','" + theUser.strNachname + "')";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(strQuery, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         public void removeUserFromEvent(int userID, int eventID)
         {
-            throw new NotImplementedException();
+            strQuery = "";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(strQuery, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         public void updateUser(User theUser)
