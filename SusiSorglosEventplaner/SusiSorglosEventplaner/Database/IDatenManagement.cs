@@ -19,6 +19,7 @@ namespace SusiSorglosEventplaner
         void removeUserFromEvent(int userID, int eventID);
 
         void insertEvent(Event theEvent);
+        void updateEvent(Event theEvent);
         void deleteEvent(int eventID);
         List<Event> getAllEvents();
         List<Event> getEventsByUser(int userID);
