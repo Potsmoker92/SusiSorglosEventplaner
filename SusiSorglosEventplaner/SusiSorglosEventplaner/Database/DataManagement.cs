@@ -16,7 +16,7 @@ namespace SusiSorglosEventplaner
 
         public void addUserToEvent(int userID, int eventID)
         {
-            strQuery = "INSERT INTO T_teilnahmen (f_p_userID, f_p_eventID) VALUES ('" + userID + "','" + eventID + "')";
+            strQuery = "INSERT INTO T_teilnahmen (f_p_userID, f_p_eventID) VALUES (" + userID + "," + eventID + ");";
             conn.Open();
             SqlCommand cmd = new SqlCommand(strQuery, conn);
             cmd.ExecuteNonQuery();
@@ -25,7 +25,16 @@ namespace SusiSorglosEventplaner
 
         public void deleteEvent(int eventID)
         {
-            strQuery = "DELETE FROM T_events WHERE eventID =" + eventID;
+            strQuery = "DELETE FROM T_events WHERE eventID =" + eventID + ";";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(strQuery, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void updateEvent(Event theEvent)
+        {
+            strQuery = "UPDATE T_events SET eventname = '"+theEvent.strEventname+"',eventLocation = '"+theEvent.strEventLocation+"',eventStart = '"+theEvent.dateEventStart+"',eventEnd = '"+theEvent.dateEventEnd+"' WHERE eventID = "+theEvent.eventID+";";
             conn.Open();
             SqlCommand cmd = new SqlCommand(strQuery, conn);
             cmd.ExecuteNonQuery();
@@ -34,7 +43,7 @@ namespace SusiSorglosEventplaner
 
         public void delteUser(int userID)
         {
-            strQuery = "DELETE FROM T_user WHERE userID = " + userID;
+            strQuery = "DELETE FROM T_user WHERE userID = " + userID + ";";
             conn.Open();
             SqlCommand cmd = new SqlCommand(strQuery, conn);
             cmd.ExecuteNonQuery();
@@ -44,7 +53,7 @@ namespace SusiSorglosEventplaner
         public List<Event> getAllEvents()
         {
             List<Event> lstEvents = new List<Event>();
-            strQuery = "SELECT * FROM T_events";
+            strQuery = "SELECT * FROM T_events;";
             conn.Open();
 
             using (SqlCommand cmd = new SqlCommand(strQuery, conn))
@@ -72,7 +81,7 @@ namespace SusiSorglosEventplaner
         public List<User> getAllusers()
         {
             List<User> lstUser = new List<User>();
-            strQuery = "SELECT * FROM T_User";
+            strQuery = "SELECT * FROM T_User;";
             conn.Open();
 
             using (SqlCommand cmd = new SqlCommand(strQuery, conn))
@@ -97,13 +106,36 @@ namespace SusiSorglosEventplaner
 
         public List<Event> getEventsByUser(int userID)
         {
-            throw new NotImplementedException();
+            List<Event> lstEvents = new List<Event>();
+            strQuery = "SELECT * FROM T_events WHERE eventID IN (SELECT f_p_eventID FROM T_teilnahmen WHERE f_p_userID = "+userID+");";
+            conn.Open();
+
+            using (SqlCommand cmd = new SqlCommand(strQuery, conn))
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Event theEvent = new Event
+                        {
+                            eventID = (int)reader["userID"],
+                            strEventname = (string)reader["eventName"],
+                            strEventLocation = (string)reader["eventLocation"],
+                            dateEventStart = (DateTime)reader["eventStart"],
+                            dateEventEnd = (DateTime)reader["eventEnd"]
+                        };
+                        lstEvents.Add(theEvent);
+                    }
+                }
+            }
+            conn.Close();
+            return lstEvents;
         }
 
         public User getUser(int userID)
         {
             User theUser = new User();
-            strQuery = "SELECT * FROM T_User WHERE id ='" + userID + "' LIMIT 1";
+            strQuery = "SELECT * FROM T_User WHERE userID =" + userID + " LIMIT 1;";
             conn.Open();
 
             using (SqlCommand cmd = new SqlCommand(strQuery, conn))
@@ -128,12 +160,33 @@ namespace SusiSorglosEventplaner
 
         public List<User> getUsersByEvent(int eventID)
         {
-            throw new NotImplementedException();
+            List<User> lstUser = new List<User>();
+            strQuery = "SELECT * FROM T_user WHERE userID IN (SELECT f_p_userID FROM T_teilnahmen WHERE f_p_eventID = "+eventID+");";
+            conn.Open();
+
+            using (SqlCommand cmd = new SqlCommand(strQuery, conn))
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        User theUser = new User
+                        {
+                            userID = (int)reader["userID"],
+                            strVorname = (string)reader["vorname"],
+                            strNachname = (string)reader["nachname"]
+                        };
+                        lstUser.Add(theUser);
+                    }
+                }
+            }
+            conn.Close();
+            return lstUser;
         }
 
         public void insertEvent(Event theEvent)
         {
-            strQuery = "INSERT INTO T_events (eventname,eventLocation,eventStart,eventEnd) VALUES ('" + theEvent.strEventname + "','" + theEvent.strEventLocation + "','" + theEvent.dateEventStart + "','" + theEvent.dateEventEnd + "')";
+            strQuery = "INSERT INTO T_events (eventname,eventLocation,eventStart,eventEnd) VALUES ('" + theEvent.strEventname + "','" + theEvent.strEventLocation + "','" + theEvent.dateEventStart + "','" + theEvent.dateEventEnd + "');";
             conn.Open();
             SqlCommand cmd = new SqlCommand(strQuery, conn);
             cmd.ExecuteNonQuery();
@@ -142,7 +195,7 @@ namespace SusiSorglosEventplaner
 
         public void insertUser(User theUser)
         {
-            strQuery = "INSERT INTO T_user (vorname,nachname) VALUE ('" + theUser.strVorname + "','" + theUser.strNachname + "')";
+            strQuery = "INSERT INTO T_user (vorname,nachname) VALUES ('" + theUser.strVorname + "','" + theUser.strNachname + "');";
             conn.Open();
             SqlCommand cmd = new SqlCommand(strQuery, conn);
             cmd.ExecuteNonQuery();
@@ -151,7 +204,7 @@ namespace SusiSorglosEventplaner
 
         public void removeUserFromEvent(int userID, int eventID)
         {
-            strQuery = "";
+            strQuery = "DELETE FROM T_teilnahmen WHERE f_p_userID =" + userID + " AND f_p_eventID =" + eventID + ";";
             conn.Open();
             SqlCommand cmd = new SqlCommand(strQuery, conn);
             cmd.ExecuteNonQuery();
@@ -160,7 +213,11 @@ namespace SusiSorglosEventplaner
 
         public void updateUser(User theUser)
         {
-            throw new NotImplementedException();
+            strQuery = "UPDATE T_user SET vorname = '"+theUser.strVorname+"',nachname = '"+theUser.strNachname+"' WHERE Userid = "+theUser.userID+";";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(strQuery, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }
